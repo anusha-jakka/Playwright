@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jul 06 02:23:50 EDT 2026</td>
+<td>Started on:</td><td>Mon Jul 13 01:14:37 EDT 2026</td>
 </tr>
-<tr><td>Total time:</td><td>4 seconds (4550 ms)</td>
+<tr><td>Total time:</td><td>11 seconds (11464 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,10 +76,185 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='playwrightTests.fileUpload.fileUploadTest()'><b>fileUploadTest</b><br>Test class: playwrightTests.fileUpload</td>
-<td></td>
-<td>4</td>
-<td>playwrightTests.fileUpload@1fa268de</td></tr>
+<td title='playwrightTests.DragAndDrop.dragAndDropTest()'><b>dragAndDropTest</b><br>Test class: playwrightTests.DragAndDrop</td>
+<td><div><pre>com.microsoft.playwright.PlaywrightException: Error {
+  message=&apos;Error: strict mode violation: locator(&quot;#droppable&quot;) resolved to 2 elements:
+    1) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByRole(AriaRole.TABPANEL, new Page.GetByRoleOptions().setName(&quot;Simple&quot;)).locator(&quot;#droppable&quot;)
+    2) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByLabel(&quot;Revert Draggable&quot;).locator(&quot;#droppable&quot;)
+
+  name=&apos;Error
+  stack=&apos;Error: Error: strict mode violation: locator(&quot;#droppable&quot;) resolved to 2 elements:
+    1) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByRole(AriaRole.TABPANEL, new Page.GetByRoleOptions().setName(&quot;Simple&quot;)).locator(&quot;#droppable&quot;)
+    2) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByLabel(&quot;Revert Draggable&quot;).locator(&quot;#droppable&quot;)
+
+    at CRExecutionContext.evaluateWithArguments (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:34367:17)
+    at async LongStandingScope._race (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:3346:18)
+    at async evaluateExpression (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:15623:12)
+    at async /private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:18036:27
+    at async _Frame.retryWithProgressAndTimeouts (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:18001:29)
+    at async _Frame.retryWithProgressAndBackoff (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:17985:16)
+    at async _Frame.hover (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:18245:27)
+    at async _FrameDispatcher.hover (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:50226:16)
+    at async _ProgressController.run (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:12974:27)
+    at async _FrameDispatcher._runCommand (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:24019:18)
+}
+Call log:
+-   - waiting for locator(&quot;#droppable&quot;)
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:138)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
+	at com.microsoft.playwright.impl.FrameImpl.hoverImpl(FrameImpl.java:448)
+	at com.microsoft.playwright.impl.FrameImpl.hover(FrameImpl.java:439)
+	at com.microsoft.playwright.impl.LocatorImpl.hover(LocatorImpl.java:395)
+	at com.microsoft.playwright.Locator.hover(Locator.java:4077)
+	at playwrightTests.DragAndDrop.dragAndDropTest(DragAndDrop.java:45)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message=&apos;Error: strict mode violation: locator(&quot;#droppable&quot;) resolved to 2 elements:
+    1) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByRole(AriaRole.TABPANEL, new Page.GetByRoleOptions().setName(&quot;Simple&quot;)).locator(&quot;#droppable&quot;)
+    2) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByLabel(&quot;Revert Draggable&quot;).locator(&quot;#droppable&quot;)
+
+  name=&apos;Error
+  stack=&apos;Error: Error: strict mode violation: locator(&quot;#droppable&quot;) resolved to 2 elements:
+    1) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByRole(AriaRole.TABPANEL, new Page.GetByRoleOptions().setName(&quot;Simple&quot;)).locator(&quot;#droppable&quot;)
+    2) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByLabel(&quot;Revert Draggable&quot;).locator(&quot;#droppable&quot;)
+
+    at CRExecutionContext.evaluateWithArguments (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:34367:17)
+    at async LongStandingScope._race (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:3346:18)
+    at async evaluateExpression (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:15623:12)
+    at async /private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:18036:27
+    at async _Frame.retryWithProgressAndTimeouts (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:18001:29)
+    at async _Frame.retryWithProgressAndBackoff (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:17985:16)
+    at async _Frame.hover (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:18245:27)
+    at async _FrameDispatcher.hover (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:50226:16)
+    at async _ProgressController.run (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:12974:27)
+    at async _FrameDispatcher._runCommand (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:24019:18)
+}
+Call log:
+-   - waiting for locator(&quot;#droppable&quot;)
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:262)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
+	... 33 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace102174918", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace102174918'><pre>com.microsoft.playwright.PlaywrightException: Error {
+  message=&apos;Error: strict mode violation: locator(&quot;#droppable&quot;) resolved to 2 elements:
+    1) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByRole(AriaRole.TABPANEL, new Page.GetByRoleOptions().setName(&quot;Simple&quot;)).locator(&quot;#droppable&quot;)
+    2) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByLabel(&quot;Revert Draggable&quot;).locator(&quot;#droppable&quot;)
+
+  name=&apos;Error
+  stack=&apos;Error: Error: strict mode violation: locator(&quot;#droppable&quot;) resolved to 2 elements:
+    1) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByRole(AriaRole.TABPANEL, new Page.GetByRoleOptions().setName(&quot;Simple&quot;)).locator(&quot;#droppable&quot;)
+    2) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByLabel(&quot;Revert Draggable&quot;).locator(&quot;#droppable&quot;)
+
+    at CRExecutionContext.evaluateWithArguments (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:34367:17)
+    at async LongStandingScope._race (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:3346:18)
+    at async evaluateExpression (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:15623:12)
+    at async /private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:18036:27
+    at async _Frame.retryWithProgressAndTimeouts (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:18001:29)
+    at async _Frame.retryWithProgressAndBackoff (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:17985:16)
+    at async _Frame.hover (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:18245:27)
+    at async _FrameDispatcher.hover (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:50226:16)
+    at async _ProgressController.run (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:12974:27)
+    at async _FrameDispatcher._runCommand (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:24019:18)
+}
+Call log:
+-   - waiting for locator(&quot;#droppable&quot;)
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:138)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:131)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:124)
+	at com.microsoft.playwright.impl.FrameImpl.hoverImpl(FrameImpl.java:448)
+	at com.microsoft.playwright.impl.FrameImpl.hover(FrameImpl.java:439)
+	at com.microsoft.playwright.impl.LocatorImpl.hover(LocatorImpl.java:395)
+	at com.microsoft.playwright.Locator.hover(Locator.java:4077)
+	at playwrightTests.DragAndDrop.dragAndDropTest(DragAndDrop.java:45)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message=&apos;Error: strict mode violation: locator(&quot;#droppable&quot;) resolved to 2 elements:
+    1) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByRole(AriaRole.TABPANEL, new Page.GetByRoleOptions().setName(&quot;Simple&quot;)).locator(&quot;#droppable&quot;)
+    2) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByLabel(&quot;Revert Draggable&quot;).locator(&quot;#droppable&quot;)
+
+  name=&apos;Error
+  stack=&apos;Error: Error: strict mode violation: locator(&quot;#droppable&quot;) resolved to 2 elements:
+    1) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByRole(AriaRole.TABPANEL, new Page.GetByRoleOptions().setName(&quot;Simple&quot;)).locator(&quot;#droppable&quot;)
+    2) &lt;div id=&quot;droppable&quot; class=&quot;drop-box ui-droppable&quot;&gt;…&lt;/div&gt; aka getByLabel(&quot;Revert Draggable&quot;).locator(&quot;#droppable&quot;)
+
+    at CRExecutionContext.evaluateWithArguments (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:34367:17)
+    at async LongStandingScope._race (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:3346:18)
+    at async evaluateExpression (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:15623:12)
+    at async /private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:18036:27
+    at async _Frame.retryWithProgressAndTimeouts (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:18001:29)
+    at async _Frame.retryWithProgressAndBackoff (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:17985:16)
+    at async _Frame.hover (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:18245:27)
+    at async _FrameDispatcher.hover (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:50226:16)
+    at async _ProgressController.run (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:12974:27)
+    at async _FrameDispatcher._runCommand (/private/var/folders/77/vs0tb__x5_x5xtwhzjdlx0fw0000gn/T/playwright-java-8436053464205854142/package/lib/coreBundle.js:24019:18)
+}
+Call log:
+-   - waiting for locator(&quot;#droppable&quot;)
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:262)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:214)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:136)
+	... 33 more
+</pre></div></td>
+<td>11</td>
+<td>playwrightTests.DragAndDrop@5ffead27</td></tr>
 </table><p>
 </body>
 </html>

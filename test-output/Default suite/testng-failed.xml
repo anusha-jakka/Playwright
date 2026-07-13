@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="playwrightTests.practiceFormTests">
+      <class name="playwrightTests.DragAndDrop">
         <methods>
-          <include name="practiceFormSubmitTest"/>
+          <include name="dragAndDropTest"/>
         </methods>
-      </class> <!-- playwrightTests.practiceFormTests -->
+      </class> <!-- playwrightTests.DragAndDrop -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

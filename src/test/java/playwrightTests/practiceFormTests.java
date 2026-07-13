@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Locator.GetByTextOptions;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.assertions.PlaywrightAssertions;
@@ -16,7 +17,7 @@ public class practiceFormTests {
 	@Test
 	public void practiceFormSubmitTest() {
 		
-		Browser browser=Playwright.create().webkit().launch(new BrowserType.LaunchOptions().setHeadless(false));
+		Browser browser=Playwright.create().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(1000));
 		Page page=browser.newPage();
 		page.navigate("https://demoqa.com/automation-practice-form");
 		
@@ -35,7 +36,14 @@ public class practiceFormTests {
 		page.getByPlaceholder("Mobile Number").fill(new Faker().phoneNumber().subscriberNumber(10));
 		
 		//-->Automate calender field later
-
+//		page.locator("#dateOfBirthInput").fill("18 Jul 2027");-->direct input date
+		//Select by dropdowns
+		page.locator("#dateOfBirthInput").click();
+		page.locator(".react-datepicker__month-select").selectOption("July");
+		page.locator(".react-datepicker__year-select").selectOption("2027");
+		page.getByText("18", new Page.GetByTextOptions().setExact(true)).click();
+		
+		
 		page.locator("xpath=//label[text()='Sports']//preceding::input[1]").click();
 		
 		//File upload 
