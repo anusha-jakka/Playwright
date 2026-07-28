@@ -159,6 +159,7 @@ public void userRegistration()
 public void validateCourseCreation()
 {
 	Faker testData= new Faker();
+	
 	Browser browser=Playwright.create().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(1000));
 	Page page=browser.newPage();
 	
@@ -190,25 +191,25 @@ public void validateCourseCreation()
 	
 	page.locator("#thumbnail").setInputFiles(Path.of(System.getProperty("user.dir")+"/src/test/resources/FileData/playwright-seeklogo.png"));
 	
-	page.locator("#name").fill("Playwright with Java practice");
+	page.locator("#name").fill("Playwright with Java Assignment");
 	
 	page.locator("#description").fill("Learning and Practice");
 	
 	page.locator("#instructorNameId").fill("SelfLearning");
 	
-	page.locator("#price").fill("1000");
+	page.locator("#price").fill("2000");
 	
 	page.locator("[name='startDate']").click();
 	
-	page.getByText("12", new Page.GetByTextOptions().setExact(true)).click();
+	page.getByText("13", new Page.GetByTextOptions().setExact(true)).click();
 	
 	page.locator("[name='endDate']").click();
 	
 	page.getByLabel("Next Month").click();
 	
-	page.getByText("11", new Page.GetByTextOptions().setExact(true)).click();
+	page.getByText("12", new Page.GetByTextOptions().setExact(true)).click();
 	
-	page.locator("#isPermanent").click();
+	PlaywrightAssertions.assertThat(page.locator("#isPermanent")).isEnabled();
 	
 	page.locator(".menu-btn").click();
 	
@@ -216,7 +217,9 @@ public void validateCourseCreation()
 	
 	page.locator("//button[@class='action-btn']").click();
 	
+	//Verify the course created
 	
+	page.locator("table.courses-table tr");
 	
 }
 	
